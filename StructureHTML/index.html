@@ -110,31 +110,31 @@ fin du slider -->
 <!-- le slider est actuellement caché car je n'ais pas encore créé les différentes images composant ce fameux slider... Je pense que j'en ferais seulement trois, et de tailles égales pour ne pas perturber la navigation. A noter que les propriétés CSS internes des images sont affectables :D -->
 
  </section>
- <div class="container-fluid">
- <h1>Présentation</h1>
+ <div class="container-fluid bodypage">
+ <h1 class="row">Présentation</h1>
   <section class="row">
     <article>
-        <img src="img/IntegrationLogoRMG.png" width="400" height="200" class=" col-sm-4 img-responsive"/>
+        <img src="img/IntegrationLogoRMG.png" width="100%" height="100%" class="col-sm-4"/>
         <p class=" col-xs-12 col-sm-8">ici contiendra le contenu de la présentation du site web. A l'intérieur, un paragraphe avec le logo du site, ou une image de contexte. Puis une description de plusieures lignes sur la société.</p>
     </article>
   </section>
-  <h1>A la une du Rétro !</h1>
+  <h1 class="row">A la une du Rétro !</h1>
   <section class="row">
-      <article class="col-sm-4">
+      <article class="col-sm-4 content">
           <h2>Article 1</h2>
           <img src="img/metroid11.gif" width = "200" height="100"/>
           <p>un texte résumant/ voire le début du texte de l'article de blog...
           A noter : il faudra peut être créer un template spécifique pour l'affichage des billets de blog en résumé, ainsi que pour l'article en lui même...</p>
           <a href="#"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
       </article>
-      <article class="col-sm-4">
+      <article class="col-sm-4 content">
           <h2>Article 2</h2>
           <img src="img/Battle_scene.png" width = "200" height="100"/>
           <p>un texte résumant/ voire le début du texte de l'article de blog...
           A noter : il faudra peut être créer un template spécifique pour l'affichage des billets de blog en résumé, ainsi que pour l'article en lui même...</p>
           <a href="#"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
       </article>
-      <article class="col-sm-4">
+      <article class="col-sm-4 content">
           <h2>Article 3</h2>
           <img src="img/parismangas.jpg" width = "200" height="100"/>
           <p>un texte résumant/ voire le début du texte de l'article de blog...
@@ -142,48 +142,49 @@ fin du slider -->
           <a href="#"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
       </article>
   </section>
-  <h1>Les Espaces</h1>
+  <h1 class="row">Les Espaces</h1>
   <section class="row">
-      <article class=" col-xs-6 col-sm-3 ">
+      <article class=" col-xs-6 col-sm-3 content">
           <img src="img/Logos%20Espaces.png" width = "200" height="200" alt="Jeux rétros"/>
           <p>Une description de l'espace Jeux rétros avec pour présentation le logo transformé pour convenir au titre de la section.</p>
           <a href="#"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
       </article>
-      <article class=" col-xs-6 col-sm-3 ">
+      <article class=" col-xs-6 col-sm-3 content">
           <img src="img/Logos%20Espace%20manga.png" width = "200" height="200" alt="Espace mangas"/>
           <p>Une description de l'espace mangas avec pour présentation le logo transformé pour convenir au titre de la section.</p>
           <a href="#"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
       </article>
-      <article class="col-xs-6 col-sm-3 ">
+      <article class="col-xs-6 col-sm-3 content">
           <img src="img/Logos%20Bornes%20d%20arcades.png" width="200" height="200" alt="Bornes Arcade"/>
           <p>Une description de l'espace Bornes d'arcade avec pour présentation le logo transformé pour convenir au titre de la section.</p>
           <a href="#"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
       </article>
-      <article class="col-xs-6 col-sm-3 ">
+      <article class="col-xs-6 col-sm-3 content">
           <img src="img/Logos%20DDR.png" width = "200" height="200" alt="Dance Dance Revolution"/>
           <p>Une description de l'espace Dance Dance Revolution avec pour présentation le logo transformé pour convenir au titre de la section.</p>
           <a href="#"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
       </article>
   </section>
-  <h1>Infos Pratiques</h1>
+  <h1 class="row">Infos Pratiques</h1>
   <section class="row">
       <article>
-         <address class="col-sm-4">
-             <img src="img/IntegrationLogoRMG.png" width="400" height="200" alt="logo du site"/> <br/>
+         <address class="col-xs-12 col-sm-4">
+             <img src="img/IntegrationLogoRMG.png" width="50%" height="50%" alt="logo du site"/> <br/>
              Retro Man Games <br/>
-             adresse : 4 Avenue de taillebourg <br/>
+             adresse :<br>
+             4 Avenue de taillebourg <br/>
+             Mail :<br>
              <a href="mailto:m.khayat@gmail.fr">m.khayat92@gmail.fr</a> <br />
-             Téléphone : 07.81.82.35.20
+             Téléphone :<br>
+             07.81.82.35.20
          </address>
-          <iframe class="col-sm-8" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.465260109463!2d2.395460315986444!3d48.84933777928665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67270d9875d03%3A0x29810d3295406c38!2s4+Avenue+de+Taillebourg%2C+75011+Paris!5e0!3m2!1sfr!2sfr!4v1490618915303" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <iframe class="col-xs-12 col-sm-8" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.465260109463!2d2.395460315986444!3d48.84933777928665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67270d9875d03%3A0x29810d3295406c38!2s4+Avenue+de+Taillebourg%2C+75011+Paris!5e0!3m2!1sfr!2sfr!4v1490618915303" width="300" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
       </article>
   </section>
   <footer class="row">
-     <ul>
-         <li><a href="#">Plan du site</a></li>
-         <li><a href="#">Mentions légales</a></li>
-         <li><a href="#">Contact</a></li>
-     </ul>
+         <a href="#" class="col-lg-4">Plan du site</a>
+         <a href="#" class="col-lg-4">Mentions légales</a>
+         <a href="#" class="col-lg-4">Contact</a>
   </footer>
   </div>
 </body>

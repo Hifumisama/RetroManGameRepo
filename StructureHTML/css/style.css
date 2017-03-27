@@ -1,4 +1,26 @@
+.bodypage{
+    background-color:black;
+    color:white;
+}
+
+.content, address{
+    text-align: center;
+}
+
 h1{
+    background-color:grey;
     padding: 20px;
+    text-align: center;
+}
+p{
+    padding: 10px;
+    font-size:1.5rem;
+}
+footer
+{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    color:black;
     text-align: center;
 }
