@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 595.3 841.9" style="enable-background:new 0 0 595.3 841.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+	.st2{fill:#575756;}
+	.st3{fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
+	.st4{stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
+	.st5{fill:none;}
+	.st6{font-family:'Symtext';}
+	.st7{font-size:60px;}
+	.st8{font-size:24px;}
+</style>
+<g id="Calque_2">
+	<path class="st0" d="M452.6,531.3h-310c-26.5,0-48-21.5-48-48v-124c0-26.5,21.5-48,48-48h310c26.5,0,48,21.5,48,48v124
+		C500.6,509.8,479.1,531.3,452.6,531.3z"/>
+</g>
+<g id="Calque_1">
+	<circle class="st1" cx="235.5" cy="495.9" r="17.5"/>
+	<circle class="st1" cx="285.2" cy="495.9" r="17.5"/>
+	<circle class="st1" cx="381.3" cy="496.7" r="17.5"/>
+	<circle class="st1" cx="426.5" cy="496.5" r="17.5"/>
+	<circle class="st1" cx="333.2" cy="495.9" r="17.5"/>
+	<ellipse class="st2" cx="150.6" cy="431.6" rx="22" ry="23.3"/>
+	<line class="st3" x1="150.6" y1="431.6" x2="130" y2="353"/>
+	<ellipse class="st4" cx="151" cy="432.4" rx="4.7" ry="4.2"/>
+	<ellipse class="st4" cx="133.8" cy="367.5" rx="20.2" ry="21.4"/>
+	<rect x="171.1" y="337.3" class="st5" width="231" height="50"/>
+	<text transform="matrix(1 0 0 1 172.3416 381.2435)" class="st6 st7">RETRO</text>
+	<rect x="224.8" y="487.8" class="st5" width="21.3" height="20.7"/>
+	<text transform="matrix(1 0 0 1 226.6671 505.3325)" class="st6 st8">G</text>
+	<rect x="275.9" y="486.3" class="st5" width="21.3" height="20.7"/>
+	<text transform="matrix(1 0 0 1 277.8107 503.9027)" class="st6 st8">A</text>
+	<rect x="324.3" y="486.1" class="st5" width="21.3" height="20.7"/>
+	<text transform="matrix(1 0 0 1 324.4118 503.6974)" class="st6 st8">M</text>
+	<rect x="372.3" y="487.4" class="st5" width="21.3" height="20.7"/>
+	<text transform="matrix(1 0 0 1 374.1689 504.9939)" class="st6 st8">E</text>
+	<rect x="418.1" y="488.1" class="st5" width="21.3" height="20.7"/>
+	<text transform="matrix(1 0 0 1 419.9974 505.6976)" class="st6 st8">S</text>
+	<rect x="227.3" y="408.2" class="st5" width="150.7" height="50"/>
+	<text transform="matrix(1 0 0 1 227.333 452.1727)" class="st6 st7">MAN</text>
+</g>
+</svg>
