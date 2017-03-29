@@ -1,0 +1,20 @@
+{% extends "::layout.html.twig" %}
+
+{# en ce qui concerne le bloc du titre, on ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans notre cas "Retro Man Games".#}
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+    <h1 class="row">L'espace Mangas</h1>
+    <section class="row">
+        <p>
+        // ici j'attends un petit texte explicatif concernant l'espace mangas. Nos arguments commerciaux, c'est que l'espace est notamment équipé de canapés, d'une collection impressionnante d'ouvrages (allant du traditionnel shonen aux genre plus ... exotiques, si tu vois ce que j'veux dire :p).
+        Nous disposons également d'un distributeur pour les petites faims, ainsi que d'une fontaine à boissons.
+        Bref sur le texte j'attends environ 2 à 3 paragraphes de 10 lignes chacuns, et le tout accompagné d'en moyenne 2 à 3 images (env 1 par paragraphe :p) Le tout respectant évidemment le responsive design :D.
+        </p>
+    </section>
+    
+    
+{% endblock %}

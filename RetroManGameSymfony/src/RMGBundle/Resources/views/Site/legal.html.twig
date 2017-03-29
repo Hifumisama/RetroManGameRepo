@@ -1,0 +1,20 @@
+{% extends "::layout.html.twig" %}
+
+{# en ce qui concerne le bloc du titre, on ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans notre cas "Retro Man Games".#}
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+    <h1 class="row">Mentions légales</h1>
+    <section class="row">
+       <p>
+        // ici absolument rien de compliqué, j'exige que tu indiques toutes les informations juridiques de notre entreprise, (tu peux garder l'adresse et le tel sa devrait pas poser de prob). Notamment le numéro SIREN, ou le type de société (dans notre cas ce sera une SARL), le capital social etc... IMPORTANT : indique à la fin de ces informations que dans l'ensemble des informations sont fictives et uniquement présentes afin de promouvoir un projet précis.
+    
+        Evidemment j'attends que tu en fasses de même pour nous (en tant que société fictive de création de sites webs.) Je demande aussi à ce que les informations entrées soit par contre conformes entre le dossier de projet, et dans le site (desfois qu'on nous pose la question lol).
+       </p>
+    </section>
+    
+    
+{% endblock %}

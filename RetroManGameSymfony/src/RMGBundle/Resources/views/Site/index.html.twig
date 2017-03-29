@@ -1,69 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <title>RetroManGames -  Accueil</title>
-  <!--  Feuille de style initial pour le projet -->
-  <link rel="stylesheet" href="css/style.css">
-  <!--  Ajout de jQuery afin de supporter l'utilisation de bootstrap-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!--  Ajout de bootstrap pour le projet, utile pour ses composants de menu ainsi que pour son système de grille responsive...-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <!-- Cette ligne est présente pour les mobiles notamment -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-</head>
-<body>
-<header>
-    <a href="index.html"><img src="img/banniere.png" width="100%"/></a>
-</header>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Contenu de la version mobile du menu (permet de créer le menu responsive...) -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Quelque chose à vérifier...</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
+{# Ici on est dans la vue "enfant", et qui va servir à personnaliser le contenu de la page :). Cela ressemble pas mal au système des include présent dans PHP d'ailleurs... #}
 
-    <!-- Récupération des liens pour la fabrication du menu  -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Accueil <span class="sr-only">(current)</span></a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les Espaces<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Jeux Rétros</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Espace Mangas</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Bornes d'arcade</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Dance Dance Revolution</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Actualités</a></li>
-        <li><a href="#">Réserver nos salles</a></li>
-        <li><a href="#">Nous Contacter</a></li>
-        <!--  concernant le système d'inscription et de connexion/deconnexion, ce sont actuellement des placeHolders, on va ensuite utiliser FoS pour gérer ceci plus tard...-->
-        <li><a href="#">Inscription</a></li>
-        <li><a href="#">Connexion</a></li>
-        <li><a href="#">Deconnexion</a></li>
-      </ul>
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Rechercher sur le site">
-        </div>
-        <button type="submit" class="btn btn-default">Go!</button>
-      </form>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
- <section>
+{% extends "::layout.html.twig" %}
+
+{# en ce qui concerne le bloc du titre, on ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans notre cas "Retro Man Games".#}
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+
+    <section>
  
  
  
@@ -109,7 +56,6 @@ fin du slider -->
 <!-- le slider est actuellement caché car je n'ais pas encore créé les différentes images composant ce fameux slider... Je pense que j'en ferais seulement trois, et de tailles égales pour ne pas perturber la navigation. A noter que les propriétés CSS internes des images sont affectables :D -->
 
  </section>
- <div class="container-fluid bodypage">
  <h1 class="row">Présentation</h1>
   <section class="row">
     <article>
@@ -146,22 +92,22 @@ fin du slider -->
       <article class=" col-xs-6 col-sm-3 content">
           <img src="img/Logos%20Espaces.png" width = "200" height="200" alt="Jeux rétros"/>
           <p>Une description de l'espace Jeux rétros avec pour présentation le logo transformé pour convenir au titre de la section.</p>
-          <a href="#"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
+          <a href="{{ path('rmg_retrogames')}}"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
       </article>
       <article class=" col-xs-6 col-sm-3 content">
           <img src="img/Logos%20Espace%20manga.png" width = "200" height="200" alt="Espace mangas"/>
           <p>Une description de l'espace mangas avec pour présentation le logo transformé pour convenir au titre de la section.</p>
-          <a href="#"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
+          <a href="{{ path('rmg_mangas')}}"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
       </article>
       <article class="col-xs-6 col-sm-3 content">
           <img src="img/Logos%20Bornes%20d%20arcades.png" width="200" height="200" alt="Bornes Arcade"/>
           <p>Une description de l'espace Bornes d'arcade avec pour présentation le logo transformé pour convenir au titre de la section.</p>
-          <a href="#"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
+          <a href="{{ path('rmg_arcade')}}"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
       </article>
       <article class="col-xs-6 col-sm-3 content">
           <img src="img/Logos%20DDR.png" width = "200" height="200" alt="Dance Dance Revolution"/>
           <p>Une description de l'espace Dance Dance Revolution avec pour présentation le logo transformé pour convenir au titre de la section.</p>
-          <a href="#"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
+          <a href="{{ path('rmg_ddr')}}"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
       </article>
   </section>
   <h1 class="row">Infos Pratiques</h1>
@@ -180,11 +126,5 @@ fin du slider -->
           <iframe class="col-xs-12 col-sm-8" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.465260109463!2d2.395460315986444!3d48.84933777928665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67270d9875d03%3A0x29810d3295406c38!2s4+Avenue+de+Taillebourg%2C+75011+Paris!5e0!3m2!1sfr!2sfr!4v1490618915303" width="300" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
       </article>
   </section>
-  <footer class="row">
-         <a href="#" class="col-lg-4">Plan du site</a>
-         <a href="#" class="col-lg-4">Mentions légales</a>
-         <a href="#" class="col-lg-4">Contact</a>
-  </footer>
-  </div>
-</body>
-</html>
+
+{% endblock %}

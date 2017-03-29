@@ -1,0 +1,16 @@
+{% extends "::layout.html.twig" %}
+
+{# en ce qui concerne le bloc du titre, on ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans notre cas "Retro Man Games".#}
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+   <h1 class="row">L'espace Dance Dance Revolution</h1>
+   <section class="row">
+       <p> 
+       Pour celui ci, pas touche :p c'est moi et moi seul qui m'occuperais du remplissage de cette section ^^. Plus sérieuseuement, j'compte ajouter un texte présentant un descriptif technique du jeu, des bornes, et également une petite vidéo explicative indiquant comment concrètement jouer à Dance Dance Revolution. Cette page sera donc mon petit plaisir, et ma petite fierté personnelle :D.s
+       </p>
+   </section>
+{% endblock %}

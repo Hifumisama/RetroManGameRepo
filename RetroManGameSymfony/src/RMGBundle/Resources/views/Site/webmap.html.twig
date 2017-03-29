@@ -1,0 +1,15 @@
+{% extends "::layout.html.twig" %}
+
+{# en ce qui concerne le bloc du titre, on ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans notre cas "Retro Man Games".#}
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+    <section class="row">
+        <p>
+            // section à remplir en dernier, cette page va contenir quasi exclusivement l'ensemble des liens vers toutes les pages du site (à l'exception bien sûr des pages administrateurs... logique xD).
+        </p>
+    </section>
+{% endblock %}

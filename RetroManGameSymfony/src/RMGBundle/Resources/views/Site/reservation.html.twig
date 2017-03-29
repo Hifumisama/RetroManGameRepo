@@ -1,0 +1,18 @@
+{% extends "::layout.html.twig" %}
+
+{# en ce qui concerne le bloc du titre, on ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans notre cas "Retro Man Games".#}
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+    <h1 class="row">Réserver un espace</h1>
+    <section class="row">
+        <p>
+            Pour le moment j'ignore encore comment va se dérouler le process de réservation d'un des espaces. Donc pour l'instant tu peux laisser vide OU (et je t'enjoins même à le faire) de laisser des annotations si t'as des idées pour la procédure que l'utilisateur doit suivre afin de générer une réservation :D
+        </p>
+    </section>
+    
+    
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "::layout.html.twig" %}
+
+{# en ce qui concerne le bloc du titre, on ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans notre cas "Retro Man Games".#}
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+   <h1 class="row"> Les Actus </h1>
+   <section>
+       <p>
+        Ici le système de blog sera géré un peu comme celui de l'espace arcade. 
+        Le but cette fois étant d'agréger des annonces présentes dans une base de données, puis de les afficher selon le bon vouloir de la personne... Pour simplifier un peu, on va dire qu'on peut faire afficher que les 10 derniers articles du site... Concernant ce détail, je vais avoir notamment besoin de différents articles (rédigés ou dupliqués puis modifiés de l'actualité rétrogaming) afin de remplir la base de données. On pourra éventuellement ajouter la possibilité à l'administrateur d'ajouter,modifier ou supprimer ses billets. (afin de pas surcomplexifier le truc, on va se contenter de la modification de l'admin...).
+       </p>
+   </section>
+{% endblock %}

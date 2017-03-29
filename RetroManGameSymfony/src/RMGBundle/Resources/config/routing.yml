@@ -1,0 +1,43 @@
+rmg_homepage:
+    path:     /
+    defaults: { _controller: RMGBundle:Default:index }
+
+rmg_rooms:
+    path:      /Espaces
+    defaults: { _controller:RMGBundle:Default:rooms }
+
+rmg_retrogames:
+    path:     /JeuxRetros
+    defaults: { _controller:RMGBundle:Default:retrogames }
+
+rmg_mangas:
+    path:     /Mangas
+    defaults: { _controller:RMGBundle:Default:mangas }
+
+rmg_arcade:
+    path:      /Arcade
+    defaults: { _controller:RMGBundle:Default:arcade }
+
+rmg_ddr:
+    path:      /DanceDanceRevolution
+    defaults: { _controller:RMGBundle:Default:ddr }
+
+rmg_blog:
+    path:      /Blog
+    defaults: { _controller:RMGBundle:Default:blog }
+
+rmg_reservation:
+    path:      /Reservation
+    defaults: { _controller:RMGBundle:Default:reservation }
+
+rmg_contact:
+    path:      /Contact
+    defaults: { _controller:RMGBundle:Default:contact }
+
+rmg_webmap:
+    path:      /Plandusite
+    defaults: { _controller:RMGBundle:Default:webmap }
+
+rmg_legal:
+    path:      /MentionsLegales
+    defaults: { _controller:RMGBundle:Default:legal}
