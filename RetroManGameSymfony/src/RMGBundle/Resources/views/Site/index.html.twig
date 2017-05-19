@@ -1,119 +1,76 @@
 {# Ici on est dans la vue "enfant", et qui va servir à personnaliser le contenu de la page :). Cela ressemble pas mal au système des include présent dans PHP d'ailleurs... #}
-
 {% extends "::layout.html.twig" %}
+{# en ce qui concerne le bloc du titre, on
+ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans notre cas "Retro Man Games".#}
 
-{# en ce qui concerne le bloc du titre, on ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans notre cas "Retro Man Games".#}
-{% block title %}
-    Accueil - {{ parent() }}
+{% block title %} Accueil - {{ parent() }} {% endblock %}
+{% block body %}
+{% block banner %}
+<section id="bannerVideo">
+  <h1 id="title">Bienvenue Chez RetroManGames</h1>
+  <video autoplay loop muted>
+      <source src="videos/pacman game play.mp4" type="video/mp4">
+  </video>
+</section>
 {% endblock %}
 
-
-{% block body %}
-
-    <section>
- 
- 
- 
- 
-<!-- Debut du composant slider
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  Points d'indications 
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-  Conteneur des sliders 
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="img/Battle_scene.png" width="200" height="200" alt="image de test 1">
-      <div class="carousel-caption">
-        <p>Ceci est un test afin de vérifier que l'image 1 apparaît correctement</p>
-      </div>
-    </div>
-    <div class="item">
-      <img src="img/IntegrationLogoRMG.png" width="200" height="200" alt="image test 2">
-      <div class="carousel-caption">
-        <p>Test image 2 maggle ^^</p>
-      </div>
+<h1 class="sectiontitle">Les Espaces</h1>
+<section class="row whitesection">
+  <div class="col-lg-2 flexycolumn">
+    <img class="imagecontent" src="img/LogoArcade.png"/>
+    <p class="spacecontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu tempus libero. Mauris sed egestas quam. Donec mollis, metus in facilisis tempor, turpis urna viverra nibh, in sollicitudin nisi nisi in nibh. Nulla semper nisl sed erat aliquam mattis. Quisque dictum tortor quis porta scelerisque. In gravida eu mauris eget suscipit. Maecenas faucibus sem eu risus imperdiet tempor. Aliquam sit amet risus justo. Nam venenatis, purus in euismod tincidunt, nisi urna varius nibh, ut eleifend tortor odio sed turpis. </p>
+    <a class="morebutton green" href="#">En savoir +</a>
+  </div>
+  <div class="col-lg-2 flexycolumn">
+    <img class="imagecontent" src="img/LogoDDR.png"/>
+    <p class="spacecontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu tempus libero. Mauris sed egestas quam. Donec mollis, metus in facilisis tempor, turpis urna viverra nibh, in sollicitudin nisi nisi in nibh. Nulla semper nisl sed erat aliquam mattis. Quisque dictum tortor quis porta scelerisque. In gravida eu mauris eget suscipit. Maecenas faucibus sem eu risus imperdiet tempor. Aliquam sit amet risus justo. Nam venenatis, purus in euismod tincidunt, nisi urna varius nibh, ut eleifend tortor odio sed turpis. </p>
+    <a class="morebutton orange" href="#">En savoir +</a>
+  </div>
+  <div class="col-lg-4">
+    <img class="imagevs" src="img/vs.jpg"/>
+  </div>
+  <div class="col-lg-2 flexycolumn">
+    <img class="imagecontent" src="img/LogoMangas.png"/>
+    <p class="spacecontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu tempus libero. Mauris sed egestas quam. Donec mollis, metus in facilisis tempor, turpis urna viverra nibh, in sollicitudin nisi nisi in nibh. Nulla semper nisl sed erat aliquam mattis. Quisque dictum tortor quis porta scelerisque. In gravida eu mauris eget suscipit. Maecenas faucibus sem eu risus imperdiet tempor. Aliquam sit amet risus justo. Nam venenatis, purus in euismod tincidunt, nisi urna varius nibh, ut eleifend tortor odio sed turpis. </p>
+    <a class="morebutton red" href="#">En savoir +</a>
+  </div>
+  <div class="col-lg-2 flexycolumn">
+    <img class="imagecontent" src="img/LogoRetro.png"/>
+    <p class="spacecontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu tempus libero. Mauris sed egestas quam. Donec mollis, metus in facilisis tempor, turpis urna viverra nibh, in sollicitudin nisi nisi in nibh. Nulla semper nisl sed erat aliquam mattis. Quisque dictum tortor quis porta scelerisque. In gravida eu mauris eget suscipit. Maecenas faucibus sem eu risus imperdiet tempor. Aliquam sit amet risus justo. Nam venenatis, purus in euismod tincidunt, nisi urna varius nibh, ut eleifend tortor odio sed turpis. </p>
+    <a class="morebutton blue" href="#">En savoir +</a>
+  </div>
+</section>
+<section class="row blacksection">
+  <h2 class="sectiontitle white">Les Tarifs</h2>
+  <div class="col-lg-4 centersubcontent">
+    <div class="flexycolumn pricecard">
+      <h2>4€</h2>
+      <h3>La première heure</h3>
+      <img src="img/LogoArcade.png">
+      <p>Avec une conso offerte rien que pour vous</p>
     </div>
   </div>
-
-   Controls 
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Précédent</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Suivant</span>
-  </a>
-</div>
-fin du slider -->
-
-
-<!-- le slider est actuellement caché car je n'ais pas encore créé les différentes images composant ce fameux slider... Je pense que j'en ferais seulement trois, et de tailles égales pour ne pas perturber la navigation. A noter que les propriétés CSS internes des images sont affectables :D -->
-
- </section>
- <h1 class="row">Présentation</h1>
-  <section class="row">
-    <article>
-        <img src="img/IntegrationLogoRMG.png" width="100%" height="100%" class="col-sm-4"/>
-        <p class=" col-xs-12 col-sm-8">ici contiendra le contenu de la présentation du site web. A l'intérieur, un paragraphe avec le logo du site, ou une image de contexte. Puis une description de plusieures lignes sur la société.</p>
-    </article>
-  </section>
-  <h1 class="row">A la une du Rétro !</h1>
-  <section class="row">
-      <article class="col-sm-4 content">
-          <h2>Article 1</h2>
-          <img src="img/metroid11.gif" width = "200" height="100"/>
-          <p>un texte résumant/ voire le début du texte de l'article de blog...
-          A noter : il faudra peut être créer un template spécifique pour l'affichage des billets de blog en résumé, ainsi que pour l'article en lui même...</p>
-          <a href="#"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
-      </article>
-      <article class="col-sm-4 content">
-          <h2>Article 2</h2>
-          <img src="img/Battle_scene.png" width = "200" height="100"/>
-          <p>un texte résumant/ voire le début du texte de l'article de blog...
-          A noter : il faudra peut être créer un template spécifique pour l'affichage des billets de blog en résumé, ainsi que pour l'article en lui même...</p>
-          <a href="#"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
-      </article>
-      <article class="col-sm-4 content">
-          <h2>Article 3</h2>
-          <img src="img/parismangas.jpg" width = "200" height="100"/>
-          <p>un texte résumant/ voire le début du texte de l'article de blog...
-          A noter : il faudra peut être créer un template spécifique pour l'affichage des billets de blog en résumé, ainsi que pour l'article en lui même...</p>
-          <a href="#"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
-      </article>
-  </section>
-  <h1 class="row">Les Espaces</h1>
-  <section class="row">
-      <article class=" col-xs-6 col-sm-3 content">
-          <img src="img/Logos%20Espaces.png" width = "200" height="200" alt="Jeux rétros"/>
-          <p>Une description de l'espace Jeux rétros avec pour présentation le logo transformé pour convenir au titre de la section.</p>
-          <a href="{{ path('rmg_retrogames')}}"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
-      </article>
-      <article class=" col-xs-6 col-sm-3 content">
-          <img src="img/Logos%20Espace%20manga.png" width = "200" height="200" alt="Espace mangas"/>
-          <p>Une description de l'espace mangas avec pour présentation le logo transformé pour convenir au titre de la section.</p>
-          <a href="{{ path('rmg_mangas')}}"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
-      </article>
-      <article class="col-xs-6 col-sm-3 content">
-          <img src="img/Logos%20Bornes%20d%20arcades.png" width="200" height="200" alt="Bornes Arcade"/>
-          <p>Une description de l'espace Bornes d'arcade avec pour présentation le logo transformé pour convenir au titre de la section.</p>
-          <a href="{{ path('rmg_arcade')}}"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
-      </article>
-      <article class="col-xs-6 col-sm-3 content">
-          <img src="img/Logos%20DDR.png" width = "200" height="200" alt="Dance Dance Revolution"/>
-          <p>Une description de l'espace Dance Dance Revolution avec pour présentation le logo transformé pour convenir au titre de la section.</p>
-          <a href="{{ path('rmg_ddr')}}"><img src="img/EnSavoirPlusImprint.png" width ="125" height="100" alt="en savoir plus"/></a>
-      </article>
-  </section>
-  <h1 class="row">Infos Pratiques</h1>
-  <section class="row">
-      <article>
-         <address class="col-xs-12 col-sm-4">
+  <div class="col-lg-4 centersubcontent">
+    <div class="flexycolumn pricecard">
+      <h2>1€</h2>
+      <h3>L'heure suivante</h3>
+      <img src="img/LogoArcade.png">
+      <p>Pour quelques parties de plus</p>
+    </div>
+  </div>
+  <div class="col-lg-4 centersubcontent">
+    <div class="flexycolumn pricecard">
+      <h2>20€</h2>
+      <h3>Le pass journée</h3>
+      <img src="img/LogoArcade.png">
+      <p>Et a ce prix un menu est offert !</p>
+    </div>
+  </div>
+</section>
+<h1 class="sectiontitle">Infos Pratiques</h1>
+<section class="row">
+  <article>
+    <address class="col-xs-12 col-sm-4">
              <img src="img/IntegrationLogoRMG.png" width="50%" height="50%" alt="logo du site"/> <br/>
              Retro Man Games <br/>
              adresse :<br>
@@ -123,8 +80,9 @@ fin du slider -->
              Téléphone :<br>
              07.81.82.35.20
          </address>
-          <iframe class="col-xs-12 col-sm-8" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.465260109463!2d2.395460315986444!3d48.84933777928665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67270d9875d03%3A0x29810d3295406c38!2s4+Avenue+de+Taillebourg%2C+75011+Paris!5e0!3m2!1sfr!2sfr!4v1490618915303" width="300" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </article>
-  </section>
+    <iframe class="col-xs-12 col-sm-7" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.465260109463!2d2.395460315986444!3d48.84933777928665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67270d9875d03%3A0x29810d3295406c38!2s4+Avenue+de+Taillebourg%2C+75011+Paris!5e0!3m2!1sfr!2sfr!4v1490618915303"
+      width="300" height="450" frameborder="0" style="border:5px solid black" allowfullscreen></iframe>
+  </article>
+</section>
 
 {% endblock %}

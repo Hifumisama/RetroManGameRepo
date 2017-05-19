@@ -2,101 +2,97 @@
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="utf-8">
-  {# le block title est là pour faire changer le titre en fonction de la page #}
-  
+  <meta charset="utf-8"> {# le block title est là pour faire changer le titre en fonction de la page #}
+
   <title> {% block title %}RetroManGames {% endblock %} </title>
-  
+
   {# On cale un bloc ici pour pouvoir faire charger le CSS à volonté #}
-  
   {% block stylesheets %}
-      <!--  Feuille de style initial pour le projet -->
-      <link rel="stylesheet" href="css/style.css">
-      <!--  Ajout de bootstrap pour le projet, utile pour ses composants de menu ainsi que pour son système de grille responsive...-->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!--  Feuille de style initial pour le projet -->
+  <link rel="stylesheet" href="css/style.css">
+  <!--  Ajout de bootstrap pour le projet, utile pour ses composants de menu ainsi que pour son système de grille responsive...-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Ajout de la police roboto -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   {% endblock %}
-  
   {# De même pour le javascript d'ailleurs #}
-  
   {% block javascript %}
-      <!--  Ajout de jQuery afin de supporter l'utilisation de bootstrap-->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <!--  Ajout du javascript pour bootstrap afin de gérer certains éléments-->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!--  Ajout de jQuery afin de supporter l'utilisation de bootstrap-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--  Ajout du javascript pour bootstrap afin de gérer certains éléments-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   {% endblock %}
-  
+
   <!-- Cette ligne est présente pour les mobiles notamment -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
 
-{# la dissociation ici est présente pour des raisons de testing :D. L'autre éventuelle raison serait de dissocier le header, afin de réussir à le modifier indépendamment du layout (genre modifier la bannière par ex :D) #}
+  {# la dissociation ici est présente pour des raisons de testing :D. L'autre éventuelle raison serait de dissocier le header, afin de réussir à le modifier indépendamment du layout (genre modifier la bannière par ex :D) #}
+  {% block nav %}
 
-{% block header %}
-<header>
-    <a href="{{ path('rmg_homepage') }}"><img src="img/banniere.png" width="100%"/></a>
-</header>
-{% endblock %}
-
-{% block nav %}
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Contenu de la version mobile du menu (permet de créer le menu responsive...) -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Contenu de la version mobile du menu (permet de créer le menu responsive...) -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><img src="img/IntegrationLogoRMG.png" width="100px" height="50px"></a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">RetroManGames</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      </div>
+
+      <!-- Récupération des liens pour la fabrication du menu  -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          {# Concernant l'ajout des liens d'une page vers l'autre, on se sert tout simplement de la fonction path, suivi du nom de la route. Tout bêtement :D. #}
+          <li class="active"><a href="{{ path('rmg_homepage') }}">Accueil <span class="sr-only">(current)</span></a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les Espaces<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ path('rmg_retrogames')}}">Jeux Retros</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="{{ path('rmg_mangas')}}">Espace Mangas</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="{{ path('rmg_arcade')}}">Bornes arcade</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="{{ path('rmg_ddr')}}">Dance Dance Revolution</a></li>
+            </ul>
+          </li>
+          <li><a href="{{ path('rmg_blog')}}">News</a></li>
+          <li><a href="{{ path('rmg_contact')}}">Nous Contacter</a></li>
+          <li><a href="{{ path('rmg_reservation')}}">Reserver nos salles</a></li>
+          <!--  concernant le système d'inscription et de connexion/deconnexion, ce sont actuellement des placeHolders, on va ensuite utiliser FoS pour gérer ceci plus tard...-->
+          <li><a href="#">Inscription</a></li>
+          <li><a href="#">Connexion</a></li>
+          <li><a href="#">Deconnexion</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
     </div>
+    <!-- /.container-fluid -->
+  </nav>
 
-    <!-- Récupération des liens pour la fabrication du menu  -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-       {# Concernant l'ajout des liens d'une page vers l'autre, on se sert tout simplement de la fonction path, suivi du nom de la route. Tout bêtement :D. #}
-        <li class="active"><a href="{{ path('rmg_homepage') }}">Accueil <span class="sr-only">(current)</span></a></li>
-        <li class="dropdown">
-          <a href="{{ path('rmg_rooms')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les Espaces<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ path('rmg_retrogames')}}">Jeux Rétros</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="{{ path('rmg_mangas')}}">Espace Mangas</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="{{ path('rmg_arcade')}}">Bornes d'arcade</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="{{ path('rmg_ddr')}}">Dance Dance Revolution</a></li>
-          </ul>
-        </li>
-        <li><a href="{{ path('rmg_blog')}}">Actualités</a></li>
-        <li><a href="{{ path('rmg_reservation')}}">Réserver nos salles</a></li>
-        <li><a href="{{ path('rmg_contact')}}">Nous Contacter</a></li>
-        <!--  concernant le système d'inscription et de connexion/deconnexion, ce sont actuellement des placeHolders, on va ensuite utiliser FoS pour gérer ceci plus tard...-->
-        <li><a href="#">Inscription</a></li>
-        <li><a href="#">Connexion</a></li>
-        <li><a href="#">Deconnexion</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+  {% endblock %}
 
-{% endblock %}
 
-{# dans ce block va contenir l'ensemble des contenus potentiels de nos pages, évidemment :3. #}
+  <div class="container-fluid bodypage">
+    {% block body %}
+    {% endblock %}
+  </div>
 
-<div class="container-fluid bodypage">
-{% block body %}
-{% endblock %}
-</div>
-
-{% block footer %}
-<footer class="row">
-         <a href="{{ path('rmg_webmap')}}" class="col-lg-4">Plan du site</a>
-         <a href="{{ path('rmg_legal')}}" class="col-lg-4">Mentions légales</a>
-         <a href="{{ path('rmg_contact')}}" class="col-lg-4">Contact</a>
-</footer>
-{% endblock %}
+  {% block footer %}
+  <footer class="row">
+    <a href="{{ path('rmg_webmap')}}">Plan du site</a>
+    <a href="{{ path('rmg_legal')}}">Mentions légales</a>
+    <a href="{{ path('rmg_contact')}}">Contact</a>
+  </footer>
+  {% endblock %}
 </body>
+
 </html>
