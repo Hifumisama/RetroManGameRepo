@@ -218,6 +218,15 @@ video {
   color:white;
 }
 
+/* Contact styles*/
+
+.contactimageleft {
+  width:100%;
+}
+
+.contactimageright {
+  width:90%;
+}
 
 /* Footer style */
 
