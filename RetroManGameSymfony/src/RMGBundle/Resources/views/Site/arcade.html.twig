@@ -7,21 +7,66 @@
 
 
 {% block body %}
-   <h1 class="row">L'Espace Bornes d'arcades </h1>
-    <section class="row">
-       <p>
-           // Ajouter un petit texte descriptif (environ 4 à 5 lignes à but promotionnel sur l'espace de jeu...)
-            Cette page va contenir l'ensemble des informations sur les différentes bornes d'arcade dons nous disposons dans les locaux.
-            Cette page contiendra notamment un tableau, listant l'ensemble des bornes présentes sur site, ainis qu'une image, et un texte descriptif concernant cette borne.
-            Enfin il y aura également un lien wikipedia/jeuxvideo.com pour d'éventuelles infos supplémentaires nécessaires ou utiles. A noter en particulier que ce tableau/liste sera gérée via la base de données
-
-       </p>
-       <p>
-         RetroManGames est un pionié des bornes d'arcade, dans chaque salle vous trouverez votre bonheur pour vous divertir pleinement.
-         Que ça soit en famille, avec des amis ou seul.
-         Il y en a pour tous les goût, que ça soit jeux de combat comme Street Fighter, de danse ou biensur l'indémodable Pac Man.
-         Personne n'ai délaissé chez nous.
-       </p>
-
-    </section>
+<section id="bannerVideo">
+  <h1 id="title">Bornes Arcade</h1>
+  <video autoplay loop muted>
+      <source src="videos/pacman game play.mp4" type="video/mp4">
+  </video>
+</section>
+<section class="row padding-row">
+  <div class="col-lg-2">
+    <div class="row">
+      <div class="col-lg-12 round-icon-vertical ">
+        <a href="{{path("rmg_retrogames")}}">
+          <img src="img/LogoRetroInactif.png">
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6  round-icon">
+        <a href="{{path("rmg_arcade")}}">
+          <img src="img/LogoArcade.png">
+        </a>
+      </div>
+      <div class="col-lg-6 round-icon">
+        <a href="{{path("rmg_mangas")}}">
+          <img src="img/LogoMangasInactif.png">
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 round-icon-vertical">
+        <a href="{{path("rmg_ddr")}}">
+          <img src="img/LogoDDRInactif.png">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+  <div class="slider">
+    <div>
+      <img class="sliderimage rotate180"src="img/Borne Soul Edge.jpg">
+      <p class="slidercontent">Le texte suivant est à remplir :D</p>
+    </div>
+    <div>
+      <img class="sliderimage rotate180" src="img/Borne Soul Edge.jpg">
+      <p class="slidercontent">Le texte suivant est à remplir :D</p>
+    </div>
+    <div>
+      <img class="sliderimage rotate180" src="img/Borne Soul Edge.jpg">
+      <p class="slidercontent">Le texte suivant est à remplir :D</p>
+    </div>
+  </div>
+</div>
+<div class="col-lg-2">
+  <div class="row padding-row">
+    <div class="col-lg-6 triangle-left">
+      <img class="previous" src="img/arrow.png">
+    </div>
+    <div class="col-lg-6 triangle-right">
+      <img class="next" src="img/arrow.png">
+    </div>
+  </div>
+</div>
+</section>
 {% endblock %}

@@ -12,19 +12,37 @@
   {% block stylesheets %}
   <!--  Feuille de style initial pour le projet -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!--  Ajout de jQuery UI afin de supporter l'utilisation de bootstrap-->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
   <!--  Ajout de bootstrap pour le projet, utile pour ses composants de menu ainsi que pour son système de grille responsive...-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
   <!-- Ajout de la police roboto -->
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <!-- Ajout de slick, un plugin de création de sliders -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+
   {% endblock %}
+  
   {# De même pour le javascript d'ailleurs #}
   {% block javascript %}
+
   <!--  Ajout de jQuery afin de supporter l'utilisation de bootstrap-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
   <!--  Ajout du javascript pour bootstrap afin de gérer certains éléments-->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  {% endblock %}
 
+  <!-- Ajout de slick, un plugin de création de sliders -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+  <!-- Ajout du script personnel qui va me permettre de piloter les animations du site-->
+  <script type="text/javascript" src="js/animationjQuery.js"></script>
+
+  {% endblock %}
   <!-- Cette ligne est présente pour les mobiles notamment -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>

@@ -7,14 +7,69 @@
 
 
 {% block body %}
-    <h1 class="row">L'espace Mangas</h1>
-    <section class="row">
-        <p>
-        // ici j'attends un petit texte explicatif concernant l'espace mangas. Nos arguments commerciaux, c'est que l'espace est notamment équipé de canapés, d'une collection impressionnante d'ouvrages (allant du traditionnel shonen aux genre plus ... exotiques, si tu vois ce que j'veux dire :p).
-        Nous disposons également d'un distributeur pour les petites faims, ainsi que d'une fontaine à boissons.
-        Bref sur le texte j'attends environ 2 à 3 paragraphes de 10 lignes chacuns, et le tout accompagné d'en moyenne 2 à 3 images (env 1 par paragraphe :p) Le tout respectant évidemment le responsive design :D.
-        </p>
+  <section id="bannerVideo">
+    <h1 id="title">Espace Mangas</h1>
+    <video autoplay loop muted>
+        <source src="videos/pacman game play.mp4" type="video/mp4">
+        </video>
     </section>
-    
-    
+
+    <section class="row padding-row">
+      <div class="col-lg-2">
+        <div class="row">
+          <div class="col-lg-12 round-icon-vertical ">
+            <a href="{{path("rmg_retrogames")}}">
+              <img src="img/LogoRetroInactif.png">
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6  round-icon">
+            <a href="{{path("rmg_arcade")}}">
+              <img src="img/LogoArcadeInactif.png">
+            </a>
+          </div>
+          <div class="col-lg-6 round-icon">
+            <a href="{{path("rmg_mangas")}}">
+              <img src="img/LogoMangas.png">
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 round-icon-vertical">
+            <a href="{{path("rmg_ddr")}}">
+              <img src="img/LogoDDRInactif.png">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+      <div class="slider">
+        <div>
+          <img class="sliderimage rotate180"src="img/Coin Lecture.jpg">
+          <p class="slidercontent">Le texte suivant est à remplir :D</p>
+        </div>
+        <div>
+          <img class="sliderimage rotate180" src="img/Cerisier.jpg">
+          <p class="slidercontent">Le texte suivant est à remplir :D</p>
+        </div>
+        <div>
+          <img class="sliderimage rotate180" src="img/Manga overview.jpg">
+          <p class="slidercontent">Le texte suivant est à remplir :D</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="row padding-row">
+        <div class="col-lg-6 triangle-left">
+          <img class="previous" src="img/arrow.png">
+        </div>
+        <div class="col-lg-6 triangle-right">
+          <img class="next" src="img/arrow.png">
+        </div>
+      </div>
+    </div>
+    </section>
+
+
 {% endblock %}

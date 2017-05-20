@@ -5,14 +5,13 @@ ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans
 
 {% block title %} Accueil - {{ parent() }} {% endblock %}
 {% block body %}
-{% block banner %}
+
 <section id="bannerVideo">
   <h1 id="title">Bienvenue Chez RetroManGames</h1>
   <video autoplay loop muted>
       <source src="videos/pacman game play.mp4" type="video/mp4">
   </video>
 </section>
-{% endblock %}
 
 <h1 class="sectiontitle">Les Espaces</h1>
 <section class="row whitesection">

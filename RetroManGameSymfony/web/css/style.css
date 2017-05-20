@@ -9,7 +9,7 @@ p {
 }
 
 .container-fluid {
-  padding:0!important;
+  padding: 0!important;
 }
 
 .bodypage {
@@ -17,6 +17,8 @@ p {
   color: #1A1A1A;
   font-family: 'Roboto';
 }
+
+
 /* navbar styling */
 
 .navbar {
@@ -26,13 +28,15 @@ p {
 .navbar-brand {
   padding: 0!important;
 }
+
 .navbar-brand img {
-  margin:0 25px;
+  margin: 0 25px;
 }
 
 .navbar ul li a {
   font-family: 'KarmaticArcade';
 }
+
 
 /* Title style */
 
@@ -45,6 +49,7 @@ p {
   margin: 0 35vw;
   text-align: center;
 }
+
 
 /* BannerVideo Gestion*/
 
@@ -59,32 +64,40 @@ video {
   opacity: 0.5;
 }
 
+
 /*Modules General gestion*/
 
-.sectiontitle{
+.sectiontitle {
   font-family: KarmaticArcade;
-  color:#1A1A1A;
+  color: #1A1A1A;
   text-align: center;
 }
+
 .white {
-  color:white!important;
+  color: white!important;
 }
+
 .blacksection {
-  background:#1A1A1A;
+  background: #1A1A1A;
 }
+
 .flexy {
-  display:flex;
+  display: flex;
 }
+
 .flexycolumn {
   display: flex;
   flex-direction: column;
 }
 
+
 /* Espaces Modules styling */
+
 .imagecontent {
   width: 50%;
   margin: 0 63px;
 }
+
 .imagevs {
   width: 50%;
   margin: 136px;
@@ -93,7 +106,7 @@ video {
 .spacecontent {
   background: #1A1A1A;
   margin: 10px 0px 0px 0px;
-  color:white;
+  color: white;
   text-align: center;
 }
 
@@ -107,15 +120,19 @@ video {
 .green {
   background: #009245;
 }
+
 .red {
   background: #C1272D;
 }
+
 .blue {
   background: #0000FF;
 }
+
 .orange {
   background: #F7931E;
 }
+
 
 /* Tarifs styling */
 
@@ -123,6 +140,7 @@ video {
   display: flex;
   justify-content: center;
 }
+
 .pricecard {
   width: 200px;
   text-align: center;
@@ -132,17 +150,18 @@ video {
 }
 
 .pricecard img {
-  width:50%;
-  margin:auto;
+  width: 50%;
+  margin: auto;
 }
 
-.pricecard h2  {
-  font-size:100px;
+.pricecard h2 {
+  font-size: 100px;
 }
 
 .pricecard h3 {
-	margin-top: 0;
+  margin-top: 0;
 }
+
 
 /* infos pratiques */
 
@@ -151,16 +170,66 @@ video {
   font-size: 23px;
 }
 
-/* Footer styling */
+
+/* Espaces Style */
+
+.round-icon-vertical, .round-icon {
+  text-align: center;
+}
+
+.round-icon-vertical img {
+  width: 31%;
+}
+
+.round-icon img {
+  width: 70%;
+}
+
+.padding-row {
+  padding-top: 50px;
+}
+
+.triangle-left img, .triangle-right img {
+  width:100%;
+}
+
+.triangle-left {
+  -ms-transform: rotate(-90deg); /* IE 9 */
+   -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+   transform: rotate(-90deg);
+}
+
+.triangle-right {
+  -ms-transform: rotate(90deg); /* IE 9 */
+   -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+   transform: rotate(90deg);
+}
+
+.sliderimage {
+  width:100%;
+  height:450px;
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+}
+.slidercontent {
+  background:#1A1A1A;
+  color:white;
+}
+
+
+/* Footer style */
 
 footer {
-  display:flex!important;
+  display: flex!important;
   margin-top: 20px;
   padding: 20px;
   background-color: #1A1A1A;
   text-align: center;
-  justify-content:space-around;
+  justify-content: space-around;
 }
+
 footer a {
   color: white;
 }
