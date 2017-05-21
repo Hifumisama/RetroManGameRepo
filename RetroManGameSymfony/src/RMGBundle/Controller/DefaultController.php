@@ -80,18 +80,66 @@ class DefaultController extends Controller
           //grâce à la variable form qui nous as permis de créer le formulaire
 
           if($form->handleRequest($request)->isValid()) {
+            // On choppe tous les éléments qui se trouvent dans le formulaire (qui sont sous la forme d'un tableau)
+
+            $data = $request->get('form');
+            // On a plus qu'à parcourir chaque élément pour récupérer ce que l'on veut :D
+
+            $sendmail = $data["email"];
+            $nom = $data["nom"];
+            $prenom = $data["prenom"];
+            $adresse = $data["adresse"];
+            $sujet = $data["sujet"];
+            $date = $contact->getDatecreation()->format('Y-m-d H:i:s');
+
             // ces commandes servent à enregistrer les données dans la base
             $em = $this->getDoctrine()->getManager();
             $em->persist($contact);
             $em->flush();
 
-            // un petit message pour l'utilisateur en tant que feedback
+
+            // ici s'annonce le traitement de la requête pour envoi par mail aux différents partis
+
+            $messagetouser = \Swift_Message::newInstance()
+              ->setSubject('Notification : Contact envers la société RetroManGames')
+              ->setFrom('retromangames1995@gmail.com')
+              ->setTo($sendmail)
+              ->setBody(
+            $this->renderView(
+                'Emails/notificationUser.html.twig',
+                array(
+                  'nom' => $nom,
+                  'prenom' => $prenom,
+                  'sujet' => $sujet
+                )
+            ),
+            'text/html');
+
+            $this->get('mailer')->send($messagetouser);
+
+            $messagetoadmin = \Swift_Message::newInstance()
+              ->setSubject('Notification : Contact de M/Mme'.$nom." ".$prenom)
+              ->setFrom('retromangames1995@gmail.com')
+              ->setTo('m.khayat92@gmail.com')
+              ->setBody(
+            $this->renderView(
+                'Emails/notificationAdmin.html.twig',
+                array(
+                  'nom' => $nom,
+                  'prenom' => $prenom,
+                  'sujet' => $sujet,
+                  'datecreation' => $date
+                )
+            ),
+            'text/html');
+            $this->get('mailer')->send($messagetoadmin);
+
             return $this->render('RMGBundle:Site:index.html.twig');
           }
 
         }
 
-        // on fait passer ce magnifique formulaire à notre vue
+        // on fait réafficher le formulaire si il a merdé xD
         return $this->render('RMGBundle:Site:contact.html.twig', array (
           'form' => $form->createView(),
         ));
