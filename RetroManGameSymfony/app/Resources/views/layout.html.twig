@@ -56,7 +56,7 @@
     <div class="container-fluid">
       <!-- Contenu de la version mobile du menu (permet de créer le menu responsive...) -->
       <div class="navbar-header">
-        <a class="navbar-brand" href="#"><img src="/img/IntegrationLogoRMG.png" width="100px" height="50px"></a>
+        <a class="navbar-brand" href="{{ path('rmg_homepage')}}"><img src="/img/IntegrationLogoRMG.png" width="100px" height="50px" alt="BrandLogo"></a>
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">RetroManGames</span>
         <span class="icon-bar"></span>
@@ -82,13 +82,13 @@
               <li><a href="{{ path('rmg_ddr')}}">Dance Dance Revolution</a></li>
             </ul>
           </li>
-          <li><a href="{{ path('rmg_blog')}}">News</a></li>
+          <li><a href="{{ path('rmg_comingsoon')}}">News</a></li>
           <li><a href="{{ path('rmg_contact')}}">Nous Contacter</a></li>
-          <li><a href="{{ path('rmg_reservation')}}">Reserver nos salles</a></li>
+          <li><a href="{{ path('rmg_comingsoon')}}">Reserver nos salles</a></li>
           <!--  concernant le système d'inscription et de connexion/deconnexion, ce sont actuellement des placeHolders, on va ensuite utiliser FoS pour gérer ceci plus tard...-->
-          <li><a href="#">Inscription</a></li>
-          <li><a href="#">Connexion</a></li>
-          <li><a href="#">Deconnexion</a></li>
+          <li><a href="{{ path('rmg_comingsoon')}}">Inscription</a></li>
+          <li><a href="{{ path('rmg_comingsoon')}}">Connexion</a></li>
+          <li><a href="{{ path('rmg_comingsoon')}}">Deconnexion</a></li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->

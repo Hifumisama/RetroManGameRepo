@@ -1,0 +1,31 @@
+{% extends "::layout.html.twig" %}
+
+{# en ce qui concerne le bloc du titre, on ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans notre cas "Retro Man Games".#}
+{% block title %}
+    A venir - {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+<section id="bannerVideo">
+  <h1 id="title">Contenu A venir</h1>
+  <video autoplay loop muted>
+      <source src="#" type="video/mp4">
+  </video>
+</section>
+<section>
+  <div class="row padding-row">
+    <div class="col-lg-2">
+      <img class="contactimageleft" src="/img/eggman.png" alt="Eggman">
+    </div>
+    <div class="col-lg-8">
+      <p>Le contenu que vous recherchez n'est actuellement pas disponible, veuillez nous en excuser, mais nous avons d'autres super pages de disponibles :D</p>
+    </div>
+    <div class="col-lg-2">
+      <img class="contactimageright" src="/img/Ganondorf.png" alt="Ganondorf">
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

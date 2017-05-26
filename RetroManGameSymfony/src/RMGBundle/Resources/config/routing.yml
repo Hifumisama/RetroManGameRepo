@@ -41,3 +41,7 @@ rmg_webmap:
 rmg_legal:
     path:      /MentionsLegales
     defaults: { _controller:RMGBundle:Default:legal}
+    
+rmg_comingsoon:
+    path:      /A-venir
+    defaults: { _controller:RMGBundle:Default:comingsoon}

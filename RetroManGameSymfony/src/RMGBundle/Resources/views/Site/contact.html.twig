@@ -2,7 +2,7 @@
 
 {# en ce qui concerne le bloc du titre, on ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans notre cas "Retro Man Games".#}
 {% block title %}
-    Accueil - {{ parent() }}
+    Nous Contacter - {{ parent() }}
 {% endblock %}
 
 
@@ -16,13 +16,13 @@
 <section>
   <div class="row padding-row">
     <div class="col-lg-2">
-      <img class="contactimageleft" src="/img/zelda.png">
+      <img class="contactimageleft" src="/img/zelda.png" alt="Zelda">
     </div>
     <div class="col-lg-8">
       {{ form(form)}}
     </div>
     <div class="col-lg-2">
-      <img class="contactimageright" src="/img/link.png">
+      <img class="contactimageright" src="/img/link.png" alt="Link">
     </div>
   </div>
 </section>

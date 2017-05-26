@@ -152,5 +152,9 @@ class DefaultController extends Controller
     {
         return $this->render('RMGBundle:Site:legal.html.twig');
     }
+    public function comingsoonAction()
+    {
+      return $this->render('RMGBundle:Site:comingsoon.html.twig');
+    }
 
 }

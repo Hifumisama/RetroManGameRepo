@@ -115,22 +115,31 @@ video {
   padding: 5px;
   font-size: 21px;
   color: white;
+  transition: ease-in-out 0.5s;
 }
-
+/* On gère ici la gestion des couleurs pour le bouton "en savoir +"*/
 .green {
   background: #009245;
+  border: 1px solid #009245;
 }
 
 .red {
   background: #C1272D;
+  border: 1px solid #C1272D;
 }
 
 .blue {
   background: #0000FF;
+  border: 1px solid #0000FF;
 }
 
 .orange {
   background: #F7931E;
+  border: 1px solid #F7931E;
+}
+
+.whitebackground {
+  background: #FFFFFF;
 }
 
 

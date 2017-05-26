@@ -2,7 +2,7 @@
 
 {# en ce qui concerne le bloc du titre, on ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans notre cas "Retro Man Games".#}
 {% block title %}
-    Accueil - {{ parent() }}
+    Dance Dance Revolution - {{ parent() }}
 {% endblock %}
 
 
@@ -10,7 +10,7 @@
 <section id="bannerVideo">
   <h1 id="title">Dance Dance Revolution</h1>
   <video autoplay loop muted>
-      <source src="/videos/pacman game play.mp4" type="video/mp4">
+      <source src="/videos/DDR.mp4" type="video/mp4">
   </video>
 </section>
 <section class="row padding-row">
@@ -18,26 +18,26 @@
     <div class="row">
       <div class="col-lg-12 round-icon-vertical ">
         <a href="{{path("rmg_retrogames")}}">
-          <img src="/img/LogoRetroInactif.png">
+          <img src="/img/LogoRetroInactif.png" alt="LogoRetroInactif">
         </a>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-6  round-icon">
         <a href="{{path("rmg_arcade")}}">
-          <img src="/img/LogoArcadeInactif.png">
+          <img src="/img/LogoArcadeInactif.png" alt="LogoArcadeInactif">
         </a>
       </div>
       <div class="col-lg-6 round-icon">
         <a href="{{path("rmg_mangas")}}">
-          <img src="/img/LogoMangasInactif.png">
+          <img src="/img/LogoMangasInactif.png" alt="LogoMangasInactif">
         </a>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-12 round-icon-vertical">
         <a href="{{path("rmg_ddr")}}">
-          <img src="/img/LogoDDR.png">
+          <img src="/img/LogoDDR.png" alt="LogoDDR">
         </a>
       </div>
     </div>
@@ -45,16 +45,21 @@
   <div class="col-lg-8">
   <div class="slider">
     <div>
-      <img class="sliderimage"src="/img/DDR Overview.jpg">
-      <p class="slidercontent">Le texte suivant est à remplir :D</p>
+      <img class="sliderimage"src="/img/DDR Overview.jpg" alt="DDROverview">
+      <p class="slidercontent">Le jeu Dance Dance Revolution est un jeu d'origine Japonaise, créé en 1998 par la société japonaise Konami.
+         Ce jeu est particulièrement populaire au japon, où des tournois y sont même organisés ! </p>
     </div>
     <div>
-      <img class="sliderimage" src="/img/DDR Normal.jpg">
-      <p class="slidercontent">Le texte suivant est à remplir :D</p>
+      <img class="sliderimage" src="/img/DDR Normal.jpg" alt="DDRNormal">
+      <p class="slidercontent">En appuyant sur les flèches à l'aide des pîeds au bon moment,
+      on arrive à danser en suivant le défilement des flêches le tout pour reproduire
+      la corégraphie proposée par la chanson demandée !
+      Cela demande pas mal de coordination et un bon sens du rythme pour les niveaux les plus difficiles, mais il existe évidemment des niveaux adaptés à tous. </p>
     </div>
     <div>
-      <img class="sliderimage" src="/img/DDR Fleches.jpg">
-      <p class="slidercontent">Le texte suivant est à remplir :D</p>
+      <img class="sliderimage" src="/img/DDR Fleches.jpg" alt="DDRFleches">
+      <p class="slidercontent">Ce jeu a l'originalité de pouvoir se jouer avec les pieds et non plus avec les mains, ce qui demande
+        une coordination et une pratique bien plus intense du jeu vidéo ! On peut y jouer seul, à 2 voire pour les plus fous, seul mais avec huit touches au lieu de quatre</p>
     </div>
   </div>
 </div>
