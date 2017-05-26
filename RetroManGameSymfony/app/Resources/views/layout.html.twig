@@ -11,7 +11,7 @@
   {# On cale un bloc ici pour pouvoir faire charger le CSS à volonté #}
   {% block stylesheets %}
   <!--  Feuille de style initial pour le projet -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 
   <!--  Ajout de jQuery UI afin de supporter l'utilisation de bootstrap-->
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -26,7 +26,7 @@
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 
   {% endblock %}
-  
+
   {# De même pour le javascript d'ailleurs #}
   {% block javascript %}
 
@@ -40,7 +40,7 @@
   <!-- Ajout de slick, un plugin de création de sliders -->
   <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
   <!-- Ajout du script personnel qui va me permettre de piloter les animations du site-->
-  <script type="text/javascript" src="js/animationjQuery.js"></script>
+  <script type="text/javascript" src="/js/animationjQuery.js"></script>
 
   {% endblock %}
   <!-- Cette ligne est présente pour les mobiles notamment -->
@@ -56,7 +56,7 @@
     <div class="container-fluid">
       <!-- Contenu de la version mobile du menu (permet de créer le menu responsive...) -->
       <div class="navbar-header">
-        <a class="navbar-brand" href="#"><img src="img/IntegrationLogoRMG.png" width="100px" height="50px"></a>
+        <a class="navbar-brand" href="#"><img src="/img/IntegrationLogoRMG.png" width="100px" height="50px"></a>
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">RetroManGames</span>
         <span class="icon-bar"></span>

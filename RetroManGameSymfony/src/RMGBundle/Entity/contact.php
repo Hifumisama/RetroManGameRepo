@@ -28,7 +28,7 @@ class contact
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
-     * @Assert\length(
+     * @Assert\Length(
      *       min=2,
      *       max = 40,
      *       minMessage = "Votre nom est trop court, il doit être d'au moins {{ limit }} caractères",
@@ -41,7 +41,7 @@ class contact
     /**
      * @var string
      * @ORM\Column(name="prenom", type="string", length=255)
-     * @Assert\length(
+     * @Assert\Length(
      *       min= 2,
      *       max = 40,
      *       minMessage = "Votre prenom est trop court, il doit être d'au moins {{ limit }} caractères",
@@ -52,7 +52,7 @@ class contact
 
     /**
      * @var string
-     * @Assert\length(
+     * @Assert\Length(
      *       min = 10,
      *       max = 150,
      *       minMessage = "Votre adresse est trop courte, elle doit être d'au moins {{ limit }} caractères",
@@ -75,7 +75,7 @@ class contact
      * @var string
      *
      * @ORM\Column(name="sujet", type="text")
-     * @Assert\length(
+     * @Assert\Length(
      *       min = 10,
      *       max = 1000,
      *       minMessage = "Votre texte est trop court, il doit être d'au moins {{ limit }} caractères",
