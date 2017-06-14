@@ -49,7 +49,7 @@ class DefaultController extends Controller
     {
         return $this->render('RMGBundle:Site:reservation.html.twig');
     }
-    public function inscription()
+    public function inscriptionAction()
     {
       $personne = new personne();
 
