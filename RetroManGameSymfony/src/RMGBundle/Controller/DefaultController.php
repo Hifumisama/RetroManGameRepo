@@ -141,7 +141,7 @@ class DefaultController extends Controller
 
       // on fait réafficher le formulaire si il a merdé xD
       return $this->render('RMGBundle:Site:inscription.html.twig', array (
-        'form' => $formInscription->createView(),
+        'formInscription' => $formInscription->createView(),
       ));
     }
 
