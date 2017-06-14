@@ -49,6 +49,103 @@ class DefaultController extends Controller
     {
         return $this->render('RMGBundle:Site:reservation.html.twig');
     }
+    public function inscription()
+    {
+      $personne = new personne();
+
+      //on instancie le formulaire via le service form factory
+      $formbuilder = $this->get("form.factory")->createBuilder(Formtype::class,$personne);
+
+      // on remplit notre objet formulaire avec les champs que l'on veut
+      $formbuilder
+      ->add("nom", TextType::class)
+      ->add("prenom", TextType::class)
+      ->add("adresse", TextType::class)
+      ->add("email", TextType::class)
+      ->add("login", TextareaType::class)
+      ->add("mdp", TextareaType::class)
+      ->add("Annuler", ResetType::class)
+      ->add("Envoyer", SubmitType::class)
+      ;
+
+      // on s'occupe maintenant de générer le formulaire avec les champs ainsi fournis
+      $formInscription = $formbuilder->getForm();
+
+      // à ce moment on doit aussi vérifier la pertinence des informations que l'utilisateur nous as fournies
+
+      /* Etape 1 on vérifie que la méthode est bien un POST*/
+
+      if($request->isMethod("POST")) {
+        // si c'est bon on récupère les infos de l'utilisateur dans l'objet contact
+        //grâce à la variable form qui nous as permis de créer le formulaire
+
+        if($formInscription->handleRequest($request)->isValid()) {
+          // On choppe tous les éléments qui se trouvent dans le formulaire (qui sont sous la forme d'un tableau)
+
+          $data = $request->get('formInscription');
+          // On a plus qu'à parcourir chaque élément pour récupérer ce que l'on veut :D
+
+          $sendmail = $data["email"];
+          $nom = $data["nom"];
+          $prenom = $data["prenom"];
+          $adresse = $data["adresse"];
+          $login = $data["login"];
+          $mdp = $data["mdp"];
+          $date = $personne->getDatecreation()->format('Y-m-d H:i:s');
+
+          // ces commandes servent à enregistrer les données dans la base
+          $em = $this->getDoctrine()->getManager();
+          $em->persist($personne);
+          $em->flush();
+
+
+          // ici s'annonce le traitement de la requête pour envoi par mail aux différents partis
+
+          $messagetouser = \Swift_Message::newInstance()
+            ->setSubject('Notification : Contact envers la société RetroManGames')
+            ->setFrom('retromangames1995@gmail.com')
+            ->setTo($sendmail)
+            ->setBody(
+          $this->renderView(
+              'Emails/notificationUser.html.twig',
+              array(
+                'nom' => $nom,
+                'prenom' => $prenom,
+
+              )
+          ),
+          'text/html');
+
+          $this->get('mailer')->send($messagetouser);
+
+          $messagetoadmin = \Swift_Message::newInstance()
+            ->setSubject('Notification : Contact de M/Mme'.$nom." ".$prenom)
+            ->setFrom('retromangames1995@gmail.com')
+            ->setTo('m.khayat92@gmail.com')
+            ->setBody(
+          $this->renderView(
+              'Emails/notificationAdmin.html.twig',
+              array(
+                'nom' => $nom,
+                'prenom' => $prenom,
+                'datecreation' => $date
+              )
+          ),
+          'text/html');
+          $this->get('mailer')->send($messagetoadmin);
+
+          return $this->render('RMGBundle:Site:index.html.twig');
+        }
+
+      }
+
+      // on fait réafficher le formulaire si il a merdé xD
+      return $this->render('RMGBundle:Site:inscription.html.twig', array (
+        'form' => $formInscription->createView(),
+      ));
+    }
+
+
     public function contactAction(Request $request)
     {
         // on instancie notre entité contact
@@ -144,6 +241,8 @@ class DefaultController extends Controller
           'form' => $form->createView(),
         ));
     }
+
+
     public function webmapAction()
     {
         return $this->render('RMGBundle:Site:webmap.html.twig');

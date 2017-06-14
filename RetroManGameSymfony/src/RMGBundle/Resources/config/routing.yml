@@ -30,6 +30,10 @@ rmg_reservation:
     path:      /Reservation
     defaults: { _controller:RMGBundle:Default:reservation }
 
+rmg_inscription:
+    path:      /Inscription
+    defaults: { _controller:RMGBundle:Default:inscription }
+
 rmg_contact:
     path:      /Contact
     defaults: { _controller:RMGBundle:Default:contact }
@@ -41,7 +45,7 @@ rmg_webmap:
 rmg_legal:
     path:      /MentionsLegales
     defaults: { _controller:RMGBundle:Default:legal}
-    
+
 rmg_comingsoon:
     path:      /A-venir
     defaults: { _controller:RMGBundle:Default:comingsoon}

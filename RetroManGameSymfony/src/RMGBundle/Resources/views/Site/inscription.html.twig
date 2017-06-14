@@ -1,0 +1,31 @@
+{% extends "::layout.html.twig" %}
+
+{# en ce qui concerne le bloc du titre, on ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans notre cas "Retro Man Games".#}
+{% block title %}
+    isncription - {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+<section id="bannerVideo">
+  <h1 id="title">Inscription</h1>
+  <video autoplay loop muted>
+      <source src="/videos/pacman game play.mp4" type="video/mp4">
+  </video>
+</section>
+<section>
+  <div class="row padding-row">
+    <div class="col-lg-2">
+      <img class="contactimageleft" src="/img/zelda.png" alt="Zelda">
+    </div>
+    <div class="col-lg-8">
+      {{ formInscription(formInscription)}}
+    </div>
+    <div class="col-lg-2">
+      <img class="contactimageright" src="/img/link.png" alt="Link">
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
