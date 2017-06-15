@@ -7,6 +7,10 @@ class AppKernel extends Kernel
 {
     public function registerBundles()
     {
+      $bundles = array(
+    // …
+    new FOS\UserBundle\FOSUserBundle(),
+  );
         $bundles = [
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
