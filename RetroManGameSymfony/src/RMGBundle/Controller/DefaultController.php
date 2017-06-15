@@ -78,8 +78,12 @@ class DefaultController extends Controller
       ;
 
       // on s'occupe maintenant de générer le formulaire avec les champs ainsi fournis
-      $formInscription = $formBuilder->getForm();
+      $formInscription = $formbuilder->getForm();
 
+      // ces commandes servent à enregistrer les données dans la base
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($personne);
+      $em->flush();
 
       // on affiche le formulaire
       return $this->render('RMGBundle:Site:inscription.html.twig', array (
