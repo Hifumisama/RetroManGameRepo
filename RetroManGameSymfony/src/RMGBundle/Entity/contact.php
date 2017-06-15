@@ -95,6 +95,7 @@ class contact
     public function __construct() {
       $this->datecreation = new \DateTime();
     }
+    
 
     /**
      * Get id
