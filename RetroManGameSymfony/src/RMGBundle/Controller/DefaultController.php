@@ -4,6 +4,7 @@ namespace RMGBundle\Controller;
 
 // ici se trouve le chemin de notre entité contact :D
 use RMGBundle\Entity\contact;
+use RMGBundle\Entity\personne;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
