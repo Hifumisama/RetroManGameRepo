@@ -53,6 +53,12 @@ class DefaultController extends Controller
 
     public function inscriptionAction()
     {
+      /*
+
+        A Ton Avis.... A quoi sert la ligne ci-dessous ?...
+        Indice :  C'est très utile pour avoir une structure de données.
+
+       */
       $personne = new personne();
 
       //on instancie le formulaire via le service form factory
