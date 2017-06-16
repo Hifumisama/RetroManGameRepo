@@ -5,6 +5,7 @@ namespace RMGBundle\Controller;
 // ici se trouve le chemin de notre entité contact :D
 use RMGBundle\Entity\contact;
 use RMGBundle\Entity\personne;
+use RMGBundle\Form\personneType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -62,29 +63,15 @@ class DefaultController extends Controller
     {
       /*
 
-        A Ton Avis.... A quoi sert la ligne ci-dessous ?...
-        Indice :  C'est très utile pour avoir une structure de données.
+      on instancie l'entité personne
 
        */
       $personne = new personne();
 
       //on instancie le formulaire via le service form factory
-      $formbuilder = $this->get("form.factory")->createBuilder(Formtype::class,$personne);
+      $form = $this->get('form.factory')->create(personneType::class, $personne);
 
-      // on remplit notre objet formulaire avec les champs que l'on veut
-      $formbuilder
-      ->add("nom", TextType::class)
-      ->add("prenom", TextType::class)
-      ->add("adresse", TextType::class)
-      ->add("email", TextType::class)
-      ->add("login", TextareaType::class)
-      ->add("mdp", PasswordType::class)
-      ->add("Annuler", ResetType::class)
-      ->add("Envoyer", SubmitType::class)
-      ;
 
-      // on s'occupe maintenant de générer le formulaire avec les champs ainsi fournis
-      $form = $formbuilder->getForm();
 
       // Si la requête est en POST
     if ($request->isMethod('POST')) {
@@ -95,7 +82,7 @@ class DefaultController extends Controller
       // On vérifie que les valeurs entrées sont correctes
       if($form->handleRequest($request)->isValid()) {
 
-        
+
         // On enregistre notre objet $personne dans la base de données, par exemple
         $em = $this->getDoctrine()->getManager();
         $em->persist($personne);
@@ -124,7 +111,7 @@ class DefaultController extends Controller
         $contact = new contact();
 
         //on instancie le formulaire via le service form factory
-        $formbuilder = $this->get("form.factory")->createBuilder(Formtype::class,$contact);
+        $form = $this->get('form.factory')->create(contacType::class, $contact);
 
         // on remplit notre objet formulaire avec les champs que l'on veut
         $formbuilder
