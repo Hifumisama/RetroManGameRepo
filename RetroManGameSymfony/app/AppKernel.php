@@ -7,10 +7,7 @@ class AppKernel extends Kernel
 {
     public function registerBundles()
     {
-      $bundles = array(
-    // …
-    new FOS\UserBundle\FOSUserBundle(),
-  );
+
         $bundles = [
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
@@ -21,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new RMGBundle\RMGBundle(),
+            new RMG\UserBundle\RMGUserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -1,24 +1,41 @@
-# To get started with security, check out the documentation:
-# http://symfony.com/doc/current/security.html
+# app/config/security.yml
+
 security:
+  # Un encodeur est un objet qui encode les mots de passe des utilisateurs
+  encoders:
+    Symfony\Component\Security\Core\User\User: plaintext
 
-    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
-    providers:
-        in_memory:
-            memory: ~
+  # Cette section de la configuration dresse la hiérarchie des rôles
+  role_hierarchy:
+    ROLE_ADMIN:       ROLE_USER
+    ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
-    firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+  providers:
+    in_memory:
+      memory:
+        users:
+          user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+          admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
-        main:
-            anonymous: ~
-            # activate different ways to authenticate
+  #  Cette section cherche à vérifier que vous êtes bien celui que vous prétendez
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
 
-            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
+  # nom du firewall (main)
+    main:
+      pattern:   ^/
+      anonymous: true
+  # authentication
+      form_login:
+        login_path: login
+        check_path: login_check
+  # deconnexion
+      logout:
+        path:       logout
+        target:     login
 
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
-            #form_login: ~
+  # Cette section va s'occuper de déterminer si le visiteur a les bons droits (rôles) pour accéder à la ressource demandée
+  access_control:
+    #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
