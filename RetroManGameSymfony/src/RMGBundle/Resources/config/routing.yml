@@ -49,3 +49,7 @@ rmg_legal:
 rmg_comingsoon:
     path:      /A-venir
     defaults: { _controller:RMGBundle:Default:comingsoon}
+
+rmg_test:
+    path:      /Test
+    defaults: { _controller:RMGBundle:Default:test}

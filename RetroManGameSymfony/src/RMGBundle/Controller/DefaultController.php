@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ResetType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
@@ -51,6 +52,11 @@ class DefaultController extends Controller
         return $this->render('RMGBundle:Site:reservation.html.twig');
     }
 
+    public function testAction()
+    {
+        return $this->render('RMGBundle:Site:test.html.twig');
+    }
+
 
     public function inscriptionAction(Request $request)
     {
@@ -72,7 +78,7 @@ class DefaultController extends Controller
       ->add("adresse", TextType::class)
       ->add("email", TextType::class)
       ->add("login", TextareaType::class)
-      ->add("mdp", TextareaType::class)
+      ->add("mdp", PasswordType::class)
       ->add("Annuler", ResetType::class)
       ->add("Envoyer", SubmitType::class)
       ;
@@ -80,10 +86,30 @@ class DefaultController extends Controller
       // on s'occupe maintenant de générer le formulaire avec les champs ainsi fournis
       $form = $formbuilder->getForm();
 
-      // ces commandes servent à enregistrer les données dans la base
-      //$em = $this->getDoctrine()->getManager();
-      //$em->persist($personne);
-      //$em->flush();
+      // Si la requête est en POST
+    if ($request->isMethod('POST')) {
+      // On fait le lien Requête <-> Formulaire
+      // À partir de maintenant, la variable $advert contient les valeurs entrées dans le formulaire par le visiteur
+
+
+      // On vérifie que les valeurs entrées sont correctes
+      if($form->handleRequest($request)->isValid()) {
+
+        
+        // On enregistre notre objet $personne dans la base de données, par exemple
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($personne);
+        $em->flush();
+
+        $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
+
+        // On redirige vers la page de visualisation de l'annonce nouvellement créée
+        return $this->redirectToRoute('rmg_test', array('id' => $personne->getId()));
+      }
+    }
+
+
+
 
       // on affiche le formulaire
       return $this->render('RMGBundle:Site:inscription.html.twig', array (
