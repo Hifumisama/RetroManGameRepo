@@ -49,6 +49,7 @@ class personne
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\Email()
      */
     private $email;
 
@@ -56,6 +57,7 @@ class personne
      * @var string
      *
      * @ORM\Column(name="login", type="string", length=255)
+     * @Assert\Length(min=6)
      */
     private $login;
 
@@ -63,6 +65,7 @@ class personne
      * @var string
      *
      * @ORM\Column(name="mdp", type="string", length=255)
+     * @Assert\Length(min=6)
      */
     private $mdp;
 
