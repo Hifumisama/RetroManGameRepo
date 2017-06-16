@@ -52,7 +52,7 @@ class DefaultController extends Controller
     }
 
 
-    public function inscriptionAction()
+    public function inscriptionAction(Request $request)
     {
       /*
 
@@ -78,16 +78,16 @@ class DefaultController extends Controller
       ;
 
       // on s'occupe maintenant de générer le formulaire avec les champs ainsi fournis
-      $formInscription = $formbuilder->getForm();
+      $form = $formbuilder->getForm();
 
       // ces commandes servent à enregistrer les données dans la base
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($personne);
-      $em->flush();
+      //$em = $this->getDoctrine()->getManager();
+      //$em->persist($personne);
+      //$em->flush();
 
       // on affiche le formulaire
       return $this->render('RMGBundle:Site:inscription.html.twig', array (
-        'formInscription' => $formInscription->createView(),
+        'form' => $form->createView(),
       ));
     }
 
@@ -201,5 +201,6 @@ class DefaultController extends Controller
     {
       return $this->render('RMGBundle:Site:comingsoon.html.twig');
     }
+
 
 }
