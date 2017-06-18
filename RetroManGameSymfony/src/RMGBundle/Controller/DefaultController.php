@@ -185,9 +185,7 @@ class DefaultController extends Controller
           'form' => $form->createView(),
         ));
     }
-    public function connexionAction() {
 
-    }
 
     public function webmapAction()
     {

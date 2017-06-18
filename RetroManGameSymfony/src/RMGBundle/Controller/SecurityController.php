@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class SecurityController extends Controller
 {
     /**
-     * @Route("/login", name="login")
+     * @Route("/login", name="rmg_connexion")
      */
     public function loginAction(Request $request, AuthenticationUtils $authUtils)
     {

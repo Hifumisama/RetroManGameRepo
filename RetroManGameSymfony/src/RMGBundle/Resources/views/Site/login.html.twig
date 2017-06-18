@@ -1,49 +1,25 @@
-{# app/Resources/views/security/login.html.twig #}
-{# ... you will probably extend your base template, like base.html.twig #}
-{% extends "::layout.html.twig" %}
-
-{# en ce qui concerne le bloc du titre, on ajoute le titre de la page suivi du contenu du bloc qui est en parent, soit dans notre cas "Retro Man Games".#}
-{% block title %}
-  Connexion -
-  {{ parent() }}
-{% endblock %}
 
 {% block body %}
-  <section id="bannerVideo">
-    <h1 id="title">Inscription</h1>
-    <video autoplay loop muted>
-      <source src="/videos/pacman game play.mp4" type="video/mp4">
-    </video>
-  </section>
-  <section>
-    <div class="row padding-row">
-      <div class="col-lg-2">
-        <img class="contactimageleft" src="/img/zelda.png" alt="Zelda">
-      </div>
-      <div class="col-lg-8">
-        {% if error %}
-          <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
-
-        <form action="{{ path('rmg_connexion') }}" method="post">
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="_username" value="{{ last_username }}"/>
-
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="_password"/>
-
-          {#
-        If you want to control the URL the user
-        is redirected to on success (more details below)
-        <input type="hidden" name="_target_path" value="/account" />
-    #}
-
-          <button type="submit">login</button>
-        </form>
-      </div>
-      <div class="col-lg-2">
-        <img class="contactimageright" src="/img/link.png" alt="Link">
-      </div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Login!</h1>
+            {% if error %}
+                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+            <form action="{{ path('rmg_connexion') }}" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" />
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="_password" />
+                {#
+                    If you want to control the URL the user
+                    is redirected to on success (more details below)
+                    <input type="hidden" name="_target_path" value="/account" />
+                #}
+                <button type="submit">login</button>
+            </form>
+        </div>
     </div>
-  </section>
+</div>
 {% endblock %}
