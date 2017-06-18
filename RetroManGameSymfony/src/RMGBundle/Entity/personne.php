@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * personne
@@ -13,7 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="personne")
  * @ORM\Entity(repositoryClass="RMGBundle\Repository\personneRepository")
  */
-class personne
+class personne extends BaseUser
 {
     /**
      * @var int
@@ -22,53 +23,28 @@ class personne
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
      */
-    private $nom;
+    protected $nom;
 
     /**
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=255)
      */
-    private $prenom;
+    protected $prenom;
 
     /**
      * @var string
      *
      * @ORM\Column(name="adresse", type="string", length=255)
      */
-    private $adresse;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255)
-     * @Assert\Email()
-     */
-    private $email;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="login", type="string", length=255)
-     * @Assert\Length(min=6)
-     */
-    private $login;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="mdp", type="string", length=255)
-     * @Assert\Length(min=6)
-     */
-    private $mdp;
-
+    protected $adresse;
 
     /**
      * Get id
@@ -150,30 +126,6 @@ class personne
     public function getAdresse()
     {
         return $this->adresse;
-    }
-
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return personne
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
     }
 
     /**

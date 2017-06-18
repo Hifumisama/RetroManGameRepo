@@ -23,8 +23,8 @@ class personneType extends AbstractType
         ->add("prenom", TextType::class)
         ->add("adresse", TextType::class)
         ->add("email", TextType::class)
-        ->add("login", TextareaType::class)
-        ->add("mdp", PasswordType::class)
+        ->add("username", TextType::class)
+        ->add("password", PasswordType::class)
         ->add("Annuler", ResetType::class)
         ->add("Envoyer", SubmitType::class)
         ;

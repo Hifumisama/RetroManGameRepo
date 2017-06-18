@@ -53,13 +53,6 @@ class DefaultController extends Controller
     {
         return $this->render('RMGBundle:Site:reservation.html.twig');
     }
-
-    public function testAction()
-    {
-        return $this->render('RMGBundle:Site:test.html.twig');
-    }
-
-
     public function inscriptionAction(Request $request)
     {
       /*
@@ -71,7 +64,7 @@ class DefaultController extends Controller
 
       //on instancie le formulaire via le service form factory
       $form = $this->get('form.factory')->create(personneType::class, $personne);
-      
+
 
 
 
@@ -90,10 +83,8 @@ class DefaultController extends Controller
         $em->persist($personne);
         $em->flush();
 
-        $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
-
         // On redirige vers la page de visualisation de l'annonce nouvellement créée
-        return $this->redirectToRoute('rmg_test', array('id' => $personne->getId()));
+        return $this->redirectToRoute('rmg_homepage');
       }
     }
 
@@ -194,7 +185,9 @@ class DefaultController extends Controller
           'form' => $form->createView(),
         ));
     }
+    public function connexionAction() {
 
+    }
 
     public function webmapAction()
     {
