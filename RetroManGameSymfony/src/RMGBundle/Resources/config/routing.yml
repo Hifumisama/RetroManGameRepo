@@ -53,3 +53,7 @@ rmg_comingsoon:
 rmg_test:
     path:      /Test
     defaults: { _controller:RMGBundle:Default:test}
+
+rmg_connexion:
+    path:      /login
+    defaults: { _controller:RMGBundle:Security:login}
