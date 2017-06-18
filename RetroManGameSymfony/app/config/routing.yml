@@ -1,6 +1,4 @@
-rmg_user:
-    resource: "@RMGUserBundle/Resources/config/routing.xml"
-    prefix:   /
+
 
 
 
