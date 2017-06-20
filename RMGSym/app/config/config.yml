@@ -82,4 +82,4 @@ fos_user:
         sender_name: MehdiKhayat
     registration:
         form:
-            name: app_users_registration
+            type: UsersBundle\Form\RegistrationType
