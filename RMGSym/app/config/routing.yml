@@ -1,0 +1,10 @@
+rmg:
+    resource: "@RMGBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+users_bundle:
+    resource: "@UsersBundle/Resources/config/routing.yml"
