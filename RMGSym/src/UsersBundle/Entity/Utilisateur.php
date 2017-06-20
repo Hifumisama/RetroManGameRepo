@@ -37,6 +37,10 @@ class Utilisateur extends BaseUser
      *     groups={"Registration", "Profile"}
      * )
      */
+
+     /**
+ * @ORM\Column(name="nom", type="string", length=255)
+ */
     protected $nom;
 
     /**
