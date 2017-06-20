@@ -80,3 +80,6 @@ fos_user:
     from_email:
         address: m.khayat92@gmail.com
         sender_name: MehdiKhayat
+    registration:
+        form:
+            name: app_users_registration
