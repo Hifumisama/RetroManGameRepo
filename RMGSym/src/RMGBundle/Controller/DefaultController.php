@@ -53,51 +53,7 @@ class DefaultController extends Controller
     {
         return $this->render('RMGBundle:Site:reservation.html.twig');
     }
-    public function inscriptionAction(Request $request)
-    {
-      /*
-
-      on instancie l'entité personne
-
-       */
-      $personne = new personne();
-
-      //on instancie le formulaire via le service form factory
-      $form = $this->get('form.factory')->create(personneType::class, $personne);
-
-
-
-
-      // Si la requête est en POST
-    if ($request->isMethod('POST')) {
-      // On fait le lien Requête <-> Formulaire
-      // À partir de maintenant, la variable $advert contient les valeurs entrées dans le formulaire par le visiteur
-
-
-      // On vérifie que les valeurs entrées sont correctes
-      if($form->handleRequest($request)->isValid()) {
-
-
-        // On enregistre notre objet $personne dans la base de données, par exemple
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($personne);
-        $em->flush();
-
-        // On redirige vers la page de visualisation de l'annonce nouvellement créée
-        return $this->redirectToRoute('rmg_homepage');
-      }
-    }
-
-
-
-
-      // on affiche le formulaire
-      return $this->render('RMGBundle:Site:inscription.html.twig', array (
-        'form' => $form->createView(),
-      ));
-    }
-
-
+    
     public function contactAction(Request $request)
     {
         // on instancie notre entité contact

@@ -30,10 +30,6 @@ rmg_reservation:
     path:      /Reservation
     defaults: { _controller:RMGBundle:Default:reservation }
 
-rmg_inscription:
-    path:      /Inscription
-    defaults: { _controller:RMGBundle:Default:inscription }
-
 rmg_contact:
     path:      /Contact
     defaults: { _controller:RMGBundle:Default:contact }
