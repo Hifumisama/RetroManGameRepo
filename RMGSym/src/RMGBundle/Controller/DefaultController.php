@@ -4,9 +4,6 @@ namespace RMGBundle\Controller;
 
 // ici se trouve le chemin de notre entité contact :D
 use RMGBundle\Entity\contact;
-use RMGBundle\Entity\personne;
-use RMGBundle\Form\personneType;
-use RMGBundle\Form\contactType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -53,20 +50,29 @@ class DefaultController extends Controller
     {
         return $this->render('RMGBundle:Site:reservation.html.twig');
     }
-    
+
     public function contactAction(Request $request)
     {
         // on instancie notre entité contact
         $contact = new contact();
 
         //on instancie le formulaire via le service form factory
-        $form = $this->get('form.factory')->create(contactType::class, $contact);
+        $formbuilder = $this->get("form.factory")->createBuilder(Formtype::class,$contact);
 
         // on remplit notre objet formulaire avec les champs que l'on veut
+       $formbuilder
+       ->add("nom", TextType::class)
+       ->add("prenom", TextType::class)
+       ->add("adresse", TextType::class)
+       ->add("email", TextType::class)
+       ->add("sujet", TextareaType::class)
+       ->add("Annuler", ResetType::class)
+       ->add("Envoyer", SubmitType::class)
+       ;
 
 
-        // on s'occupe maintenant de générer le formulaire avec les champs ainsi fournis
-
+       // on s'occupe maintenant de générer le formulaire avec les champs ainsi fournis
+       $form = $formbuilder->getForm();
 
         // à ce moment on doit aussi vérifier la pertinence des informations que l'utilisateur nous as fournies
 
@@ -117,7 +123,7 @@ class DefaultController extends Controller
             $messagetoadmin = \Swift_Message::newInstance()
               ->setSubject('Notification : Contact de M/Mme'.$nom." ".$prenom)
               ->setFrom('retromangames1995@gmail.com')
-              ->setTo('m.khayat92@gmail.com')
+              ->setTo('retromangames1995@gmail.com')
               ->setBody(
             $this->renderView(
                 'Emails/notificationAdmin.html.twig',
